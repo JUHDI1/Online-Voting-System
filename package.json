@@ -1,0 +1,24 @@
+{
+  "name": "online-voting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "tailwindcss -i ./css/input.css -o ./src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faaraxcabdulaahi/onlinevotingsystem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faaraxcabdulaahi/onlinevotingsystem/issues"
+  },
+  "homepage": "https://github.com/faaraxcabdulaahi/onlinevotingsystem#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
