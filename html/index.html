@@ -1,13 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/output.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/output.css" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: ["Roboto", sanserif],
+          },
+        },
+      };
+    </script>
     <title>Online Voting System</title>
-</head>
-<body>
+  </head>
 
-    
-</body>
+  <body class="bg-[#077fff] text-white font-sans">
+    <!-- Navbar -->
+    <nav
+      class="flex items-center justify-between min-w-screen py-4 px-8 relative mt-7 xl:gap-12"
+    >
+      <!-- logo -->
+      <header class="header flex items-center absolute left-0 ml-32">
+        <div
+          class="bg-white text-black px-4 py-2 font-bold text-2xl cursor-pointer"
+        >
+          E
+        </div>
+        <span
+          class="bg-black text-white px-5 py-2 font-semibold text-2xl cursor-pointer"
+          >EAU</span
+        >
+      </header>
+
+      <!-- Hamburger Menu Button -->
+      <div class="lg:hidden z-50">
+        <button id="menu-btn" class="text-3xl focus:outline-none">☰</button>
+      </div>
+
+      <!-- Full Navbar for large screens -->
+      <ul
+        id="menu"
+        class="hidden lg:flex items-center gap-24 flex-grow justify-center ml-80 xl:text-xl"
+      >
+        <li class="group">
+          <a
+            href="#"
+            class="font-bold text-2xl group-hover:bg-green-500 py-3 px-8 group-hover:rounded-xl group-hover:text-black"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="#" class="text-2xl hover:text-black">About</a>
+        </li>
+        <li>
+          <a href="#" class="text-2xl hover:text-black">Our Activity</a>
+        </li>
+        <li>
+          <a href="#" class="text-2xl hover:text-black">Contact Us</a>
+        </li>
+        <button
+          class="text-2xl bg-white text-blue-500 px-5 py-3 rounded-xl font-semibold hover:bg-gray-600 hover:text-white"
+        >
+          Login
+        </button>
+      </ul>
+
+      <!-- Hidden navbar for mobile -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute top-20 left-0 w-full bg-[#077fff] text-center py-6 z-40"
+      >
+        <ul class="flex flex-col gap-6">
+          <li class="group">
+            <a
+              href="#"
+              class="font-bold text-xl group-hover:bg-green-500 py-2 px-4 group-hover:rounded-lg group-hover:text-black"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-xl hover:text-black">About</a>
+          </li>
+          <li>
+            <a href="#" class="text-xl hover:text-black">Our Activity</a>
+          </li>
+          <li>
+            <a href="#" class="text-xl hover:text-black">Contact Us</a>
+          </li>
+          <button
+            class="text-xl bg-white text-blue-500 px-8 py-2 rounded-lg font-semibold hover:bg-gray-600 hover:text-white" 
+          >
+            Login
+          </button>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-20 px-4 lg:px-16">
+      <!-- text section -->
+      <div class="w-full xl:w-[70%] md:w-[60%] lg:ml-16 mt-32">
+        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-extrabold">
+          Online Voting
+        </h1>
+        <p class="mt-6 text-lg lg:text-sm xl:text-lg">
+          Online voting empowers individuals to cast their votes securely and
+          conveniently from any location, ensuring equal participation in the
+          democratic process. With easy access and a user-friendly interface,
+          online voting brings fairness and transparency to elections, making
+          your voice count in a modern, efficient way.
+        </p>
+        <button
+          class="mt-10 lg:mt-12 bg-white text-blue-600 font-semibold px-10 py-3 rounded-2xl text-2xl"
+        >
+          Vote now
+        </button>
+      </div>
+
+      <!-- Image content -->
+      <div class="w-full lg:w-[80%]">
+        <div class="relative mr-20">
+          <img
+            class="w-full rounded-2xl xl:mt-24"
+            src="https://eccles.utah.edu/wp-content/uploads/2018/10/vote-for-blog.jpg"
+            alt="vote image"
+          />
+          <div
+            class="absolute -bottom-6 -left-4 lg:-left-28 bg-gray-200 text-black px-7 py-3 rounded-2xl font-bold text-sm lg:text-xl"
+          >
+            #Your voice is your power
+          </div>
+          <div
+            class="absolute -top-6 -right-4 lg:-right-20 bg-yellow-500 px-5 py-3 lg:px-10 lg:py-3 rounded-2xl font-bold text-sm lg:text-xl text-white"
+          >
+            #Justice
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript for Hamburger Menu Toggle -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
 </html>
